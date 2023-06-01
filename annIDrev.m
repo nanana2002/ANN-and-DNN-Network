@@ -3,7 +3,7 @@ function [Yn On Yt Ot] = ann2159347rev(N_ep, lr, bp, gfx, Nh, cf)
 %   ann2159347rev(100, 0.008, 1, 0, 10,1)
 % Usage:
 %    [Yn On Yt Ot] = ann09demo(N_ep, lr, data, bp, gfx, Nh)
-%    
+%    id = [1,2,3,4,5,6,7];
 % Where, for the MNIST data sets,
 % - N_ep the number of epochs, lr is the learning rate
 % - bp = 1, heuristic unscaled, 2 heuristic scaled, 3 calculus based bp
@@ -204,7 +204,7 @@ Yt=Y_test; Ot=y_pred;
 figure
 % run it backwards... But only for TSE (final layer sigmoid)
 xmin=0.0001; xmax=1-xmin;
-id = [2,1,5,9,3,4,7];
+
 for c = 1:7
   y = xmin*ones(10,1);
   y(id(c)+1) = xmax;
